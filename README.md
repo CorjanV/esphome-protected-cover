@@ -5,6 +5,8 @@ In my case, the application is as follows:
 
 <img src="Pictures/Window_closed.JPG" width="300"> <img src="Pictures/Window_open.JPG" width="300">
 
+When the window is open, the cover may not go downwards.
+
 ## Hardware preparation
 > NOTE: Any modifications to your hardware and the use of this software is at your own risk.
 
@@ -24,7 +26,7 @@ You can now attach your reed switch easily to your Shelly!
 ### ESPHome
 Use your favourite UART-USB converter to upload the ESPHome configuration to your Shelly. You can use the legs of three resistors to fit in the program header. Solder the other ends to a pinheader and connect it to the UART-USB converter.
 
-Place the cover_with_window.h file in your `/esphome` directory. Mine is at `/config/esphome`.
+Place the [cover_with_window.h](cover_with_window.h) file in your `/esphome` directory. Mine is at `/config/esphome`.
 
 Create a new node when using the ESPHome add-on. An example configuration is in [esphome_config.yaml](esphome_config.yaml). The `binary_sensor:` component is used to expose the window status to Home Assistant.
 
@@ -34,6 +36,6 @@ The cover is automaticaly detected by Home Assistant and can be set up via the i
 The custom_icons 'component' is based on [the twelfth post by @fanaticDavid from this issue](https://github.com/Armaell/home-assistant-custom-icons-loader/issues/5).
 If you want to use my custom icons, place the `/custom_icons` folder in the `/www/community` folder. Add `/hacsfiles/custom_icons/custom_icons.js` as a resource to your Lovelace dashboard.
 
-You can now control your cover without having the risk of damaging your cover (or window)!
+You can now control your cover without having the risk of damaging your cover (and/or window)!
 
 <img src="Pictures/Lovelace_card.JPG" width="500">
