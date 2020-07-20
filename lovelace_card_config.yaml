@@ -1,0 +1,10 @@
+entities:
+  - entity: cover.zonnescherm_achter_bg_template
+  - entity: cover.zonnescherm_achter_bg_position_template
+    name: Positie
+    step: 1
+    type: 'custom:slider-entity-row'
+  - entity: binary_sensor.bovenlicht_achterkant
+    name: Bovenlicht
+title: Zonnescherm achterkant BG
+type: entities
