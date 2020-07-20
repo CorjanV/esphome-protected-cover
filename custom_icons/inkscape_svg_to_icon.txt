@@ -1,0 +1,15 @@
+1. Draw the shape (e.g. with rectangles)
+2. Per shape: select shape -> tool:Edit paths by nodes (F2) -> Convert selected object to path (CTRL + Shift + C)
+3. Select all
+4. If grouped: right click -> Ungroup
+5. Select all
+6. Path -> Combine (CTRL + K)
+7. Edit -> XML Editor (CTRL + Shift + X)
+8. At: <svg:path id="xxx">, copy the value of variable 'd'
+10. Paste this value in custom_icons.js:
+	e.g.: window_shutter_100: 'm 7,19 h 10 v 1 H 7 Z M 8,8 h 8 V 19 H 8 Z M 3,4 H 21 V 8 H 	19 V 20 H 17 V 8 C 13.666667,8 6.9561892,8 7,8 V 20 H 5 V 8 H 3 V 4'
+11. Refresh page with CTRL + F5
+12. If necessary, restart HA
+
+Based on: https://github.com/Armaell/home-assistant-custom-icons-loader/issues/5
+
