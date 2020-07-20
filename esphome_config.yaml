@@ -1,0 +1,43 @@
+esphome:
+  name: zonnescherm_achterkant_bg
+  platform: ESP8266
+  board: esp01_1m
+  includes:
+    - cover_with_window.h
+
+wifi:
+  ssid: "SSID"
+  password: "PASS"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "SSID"
+    password: "PASS"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "PASS"
+
+ota:
+  password: "PASS"
+  
+cover:
+- platform: custom
+  lambda: |-
+    auto custom_cover = new CoverWithWindow();
+    App.register_component(custom_cover);
+    return {custom_cover};
+
+  covers:
+    - name: "Zonnescherm achter BG"
+  
+binary_sensor:
+  - platform: gpio
+    pin: 0 # Pull up activated in cover_with_window.h
+    name: "bovenlicht_achterkant"
+    device_class: window
