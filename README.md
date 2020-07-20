@@ -34,7 +34,7 @@ Create a new node when using the ESPHome add-on. An example configuration is in 
 The cover is automaticaly detected by Home Assistant and can be set up via the integration page. To use the cover a bit more intuitive, I've created one template cover to invert the arrrows. The other template cover is used to control the cover with a slider. [Both template covers](HA_config.yaml) are using custom icons, so they look both nicely in Lovelace. I used the custom component [slider-entity-row](https://github.com/thomasloven/lovelace-slider-entity-row) to show the slider in Lovelace.
 
 The custom_icons 'component' is based on [the twelfth post by @fanaticDavid from this issue](https://github.com/Armaell/home-assistant-custom-icons-loader/issues/5).
-If you want to use my custom icons, place the `/custom_icons` folder in the `/www/community` folder. Add `/hacsfiles/custom_icons/custom_icons.js` as a resource to your Lovelace dashboard.
+If you want to use my custom icons, place the `/custom_icons` folder in the `/www/community` folder. Add `/hacsfiles/custom_icons/custom_icons.js` as a resource to your Lovelace dashboard. If you want to create your own icons, you can use [this step-by-step guide](custom_icons/inkscape_svg_to_icon.txt) to create custom icons with Inkscape.
 
 You can now control your cover without having the risk of damaging your cover (and/or window)!
 
