@@ -1,0 +1,77 @@
+cover:
+  - platform: template
+    covers:
+      # Zonnescherm achter (begane grond)
+      zonnescherm_achter_bg_template:
+        device_class: shutter
+        friendly_name: "Zonnescherm achterkant"
+        position_template: "{{ 100 - state_attr('cover.zonnescherm_achter_bg', 'current_position') | int }}"
+        open_cover:
+          service: cover.close_cover
+          data:
+            entity_id: cover.zonnescherm_achter_bg
+        close_cover:
+          service: cover.open_cover
+          data:
+            entity_id: cover.zonnescherm_achter_bg
+        stop_cover:
+          service: cover.stop_cover
+          data:
+            entity_id: cover.zonnescherm_achter_bg
+        icon_template: >-
+            {% if state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 0 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 10 %}
+              custom:window_shutter_0
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 10 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 20 %}
+              custom:window_shutter_10
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 20 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 30 %}
+              custom:window_shutter_20
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 30 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 40 %}
+              custom:window_shutter_30
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 40 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 50 %}
+              custom:window_shutter_40
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 50 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 60 %}
+              custom:window_shutter_50
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 60 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 70 %}
+              custom:window_shutter_60
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 70 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 80 %}
+              custom:window_shutter_70
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 80 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 90 %}
+              custom:window_shutter_80
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 90 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 100 %}
+              custom:window_shutter_90
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int == 100 %}
+              custom:window_shutter_100
+            {% endif %}
+      zonnescherm_achter_bg_position_template:
+        device_class: shutter
+        friendly_name: "Zonnescherm achterkant position"
+        position_template: "{{ state_attr('cover.zonnescherm_achter_bg', 'current_position') | int }}"
+        set_cover_position:
+          service: cover.set_cover_position
+          data_template:
+            entity_id: cover.zonnescherm_achter_bg
+            position: "{{position}}"
+        icon_template: >-
+            {% if state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 0 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 10 %}
+              custom:window_shutter_0
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 10 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 20 %}
+              custom:window_shutter_10
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 20 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 30 %}
+              custom:window_shutter_20
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 30 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 40 %}
+              custom:window_shutter_30
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 40 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 50 %}
+              custom:window_shutter_40
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 50 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 60 %}
+              custom:window_shutter_50
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 60 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 70 %}
+              custom:window_shutter_60
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 70 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 80 %}
+              custom:window_shutter_70
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 80 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 90 %}
+              custom:window_shutter_80
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int >= 90 and state_attr('cover.zonnescherm_achter_bg', 'current_position') | int < 100 %}
+              custom:window_shutter_90
+            {% elif state_attr('cover.zonnescherm_achter_bg', 'current_position') | int == 100 %}
+              custom:window_shutter_100
+            {% endif %}
