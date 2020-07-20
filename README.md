@@ -1,6 +1,10 @@
 # esphome-protected-cover
 This project is based on a (modified) Shelly 2.5. The software is based on ESPHome with a custom cover component. I've implemented a time based cover and used a reed switch to detect the window status. The cover won't do anything when the window is open. At the end, the cover can be operated intuitively with Home Assistant.
 
+In my case, the application is as follows:
+
+<img src="Pictures/Window_closed.JPG" width="300"> <img src="Pictures/Window_open.JPG" width="300">
+
 ## Hardware preparation
 > NOTE: Any modifications to your hardware and the use of this software is at your own risk.
 
