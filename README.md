@@ -39,3 +39,6 @@ If you want to use my custom icons, place the `/custom_icons` folder in the `/ww
 You can now control your cover without having the risk of damaging your cover (and/or window)!
 
 <img src="Pictures/Lovelace_card.JPG" width="500">
+
+## Known issues and limitations
+* Since the reed switch is connected to D0, the boot mode may be affected when powering up the Shelly. In my case, I have to open my window to prevent booting in flash mode.
