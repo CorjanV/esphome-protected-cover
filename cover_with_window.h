@@ -2,14 +2,6 @@
 
 using namespace std;
 
-// Shelly 2.5 pinout
-const int PIN_UP = 4;
-const int PIN_DOWN = 15; 
-const int PIN_WINDOW = 0;
-
-const int UP_DURATION = 22600; // in milliseconds
-const int DOWN_DURATION = 22400; // in milliseconds
-
 unsigned long last_time = 0;
 unsigned long current_time = 0;
 
@@ -18,6 +10,12 @@ int relative_pos = 0;
 
 class CoverWithWindow : public Component, public Cover {
  public:
+  int PIN_UP;
+  int PIN_DOWN;
+  int PIN_WINDOW;
+  int UP_DURATION;
+  int DOWN_DURATION;
+
   void setup() override {
     pinMode(PIN_UP, OUTPUT);
     pinMode(PIN_DOWN, OUTPUT);
