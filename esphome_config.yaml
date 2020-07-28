@@ -31,6 +31,11 @@ cover:
   lambda: |-
     auto custom_cover = new CoverWithWindow();
     App.register_component(custom_cover);
+    custom_cover->PIN_UP = 4;
+    custom_cover->PIN_DOWN = 15;
+    custom_cover->PIN_WINDOW = 0;
+    custom_cover->UP_DURATION = 22600;
+    custom_cover->DOWN_DURATION = 22400;
     return {custom_cover};
 
   covers:
